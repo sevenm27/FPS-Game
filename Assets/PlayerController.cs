@@ -1,16 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+[RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour {
+    [SerializeField]
 
-	// Use this for initialization
-	void Start () {
-		
+    private float speed = 5f;
+
+    private PlayerMotor motor;
+
+    void Start()
+    {
+        motor = GetComponent<PlayerMotor>();
+
+    }
+
+    void Update()
+    {
+        //Calculate Movement velocity as a 3D vector
+        float _xMov = Input.GetAxisRaw("Horizontal");
+        float _zMov = Input.GetAxisRaw("Vertical");
+    
+    }
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-}
